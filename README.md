@@ -12,7 +12,7 @@ Análise sobre o artigo Smart Glove. [Acessar](/atividade_aula_03/atividade_aula
 Métricas em relação ao partionamento dos componentes. [Acessar](/atividade_aula_05/atividade_aula_05_2502_leandro_schillreff.pdf)
 
 ## Atividade aula 07
-* Autômato fechadura eletrônica.[Acessar](/atividade_aula_07/atividade_aula_07_0403_leandro_schillreff)
+* Autômato fechadura eletrônica.[Acessar](/atividade_aula_07/atividade_aula_07_0403_leandro_schillreff.pdf)
 
 * Imagem do autômato. [Acessar](/atividade_aula_07/img/fechadura_eletronica.png)
 
