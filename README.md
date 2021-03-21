@@ -17,3 +17,6 @@ Métricas em relação ao partionamento dos componentes. [Acessar](/atividade_au
 * Imagem do autômato. [Acessar](/atividade_aula_07/img/fechadura_eletronica.png)
 
 * Código em C.[Acessar](/atividade_aula_07/codigos/fechadura_eletronica.c)
+
+## Atividade aula 09
+* Definição de microcontrolador e o esquema de pinagem do microcontrolador 8051. [Acessar](/atividade_aula_09/atividade_aula_09_1003_leandro_schillreff.pdf)
