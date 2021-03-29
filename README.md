@@ -20,3 +20,6 @@ Métricas em relação ao partionamento dos componentes. [Acessar](/atividade_au
 
 ## Atividade aula 09
 * Definição de microcontrolador e o esquema de pinagem do microcontrolador 8051. [Acessar](/atividade_aula_09/atividade_aula_09_1003_leandro_schillreff.pdf)
+
+## Atividade aula 11
+* Definição de um circuito para uma Ponte H. [Acessar](/atividade_aula_11/atividade_aula_11_1803_leandro_schillreff.pdf)
