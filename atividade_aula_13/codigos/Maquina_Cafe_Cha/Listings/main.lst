@@ -1,0 +1,63 @@
+C51 COMPILER V9.60.0.0   MAIN                                                              04/04/2021 18:01:53 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main
+                    -.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <at89x52.h>
+   2          #include "header.h"
+   3          
+   4          #define MOEDA P3_0
+   5          #define BOTAO_CAFE P3_1
+   6          #define BOTAO_CHA P3_2
+   7          
+   8          #define CAFE P0_0
+   9          #define CHA P0_1
+  10          #define COPO P0_2
+  11          
+  12          
+  13          void cafe();
+  14          
+  15          
+  16          void main(){
+  17   1        P0 = 0;
+  18   1        P3 = 0;
+  19   1        
+  20   1        while(1){
+  21   2          cafe();
+  22   2        }
+  23   1      
+  24   1      }
+  25          
+  26          void cafe(){
+  27   1        if(MOEDA == 1 & BOTAO_CAFE == 1){
+  28   2          COPO = 0;
+  29   2          CAFE = 1;
+  30   2          delay(100000);
+  31   2          CAFE = 0;
+  32   2          delay(100000);
+  33   2          BOTAO_CAFE = 0;
+  34   2          delay(100000);
+  35   2          MOEDA = 0;
+  36   2          delay(100000);
+  37   2          COPO = 1;
+  38   2        }
+  39   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     89    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
