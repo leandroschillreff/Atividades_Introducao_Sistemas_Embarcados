@@ -1,0 +1,93 @@
+C51 COMPILER V9.60.0.0   QUESTAO2                                                          04/05/2021 14:06:15 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE QUESTAO2
+OBJECT MODULE PLACED IN .\Objects\Questao2.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Questao2.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\
+                    -Questao2.lst) TABS(2) OBJECT(.\Objects\Questao2.obj)
+
+line level    source
+
+   1          #include <at89x52.h>
+   2          #include <seria1232.h>
+*** WARNING C318 IN LINE 2 OF Questao2.c: can't open file 'seria1232.h'
+   3          
+   4          #define XTAL 12000000
+   5          #define T1_CLOCK XTAL/12
+   6          void init_sio_poll(unsigned int baud_rate){
+   7   1        TR1=0; //pára Timer 1 para programá-lo.
+   8   1        ET1=0; //desabilita interrupção Timer1
+   9   1        TMOD &=0x0F; //Setup timer1 no modo 2
+  10   1        TMOD |=0x20; //8-bit auto-reload timer.
+  11   1        TH1=256-((T1_CLOCK/32)/ baud_rate); //valor da recarga
+  12   1        TR1=1; //timer1 no modo ‘roda’
+  13   1        SCON=0x50; //Modo 1 com 8 bits
+  14   1        TI=1; //indicate TX buffer empty
+  15   1        //setado pelo microcontrolador com 0 na após
+  16   1        //transmissão
+  17   1      } 
+  18          
+  19          // função imprimir cchar na porta serial
+  20          void putchar(char outChar){
+  21   1        while(!TI);
+  22   1        SBUF = outChar;
+  23   1        TI = 0;
+  24   1      }
+  25          
+  26          // função para esperar um determinado tempo
+  27          void delay(long int Vezes)
+  28          {
+  29   1        while (Vezes--);
+  30   1      }
+  31          
+  32          void main(){
+  33   1        //sinaliza se a tecla foi pressionada e solta
+  34   1        bit foiPressionado = 0;
+  35   1        // inicializa com serial em 300bp/s
+  36   1        init_sio_poll(300);
+  37   1        // desliga todos os pinos P0
+  38   1        P3 = 0;
+  39   1        
+  40   1        while(1){
+  41   2          // sinaliza que P3.0 foi pressionado
+  42   2          if(P3_0 == 1){
+  43   3            foiPressionado = 1;
+  44   3          }
+  45   2          // Se P3.0 foi solta, vai imprimir as letras na porta serial
+  46   2          if(P3_0 == 0 & foiPressionado == 1){
+  47   3            delay(1000000);     // aguarda um tempo
+  48   3            putchar('L');       // trasmite a letra 'L'
+  49   3            delay(1000000);     // aguarda um tempo
+  50   3            putchar('E');       // trasmite a letra 'E'
+  51   3            delay(1000000);     // aguarda um tempo
+  52   3            putchar('A');       // trasmite a letra 'A'
+  53   3            delay(1000000);     // aguarda um tempo
+C51 COMPILER V9.60.0.0   QUESTAO2                                                          04/05/2021 14:06:15 PAGE 2   
+
+  54   3            putchar('N');       // trasmite a letra 'N'
+  55   3            delay(1000000);     // aguarda um tempo
+  56   3            putchar('D');       // trasmite a letra 'D'
+  57   3            delay(1000000);     // aguarda um tempo
+  58   3            putchar('R');       // trasmite a letra 'R'
+  59   3            delay(1000000);     // aguarda um tempo
+  60   3            putchar('O');       // trasmite a letra 'O'
+  61   3            delay(1000000);     // aguarda um tempo
+  62   3            putchar(' ');       
+  63   3            foiPressionado = 0;
+  64   3          }
+  65   2        }
+  66   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    171    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----       1
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)
