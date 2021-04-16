@@ -27,5 +27,5 @@ Métricas em relação ao partionamento dos componentes. [Acessar](/atividade_au
 ## Atividade aula 13
 * Código feito no Keil para o 8051 de uma máquina de café. [Acessar](/atividade_aula_13/atividade_aula_13_2503_leandro_schillreff.odt)
 
-## Atividade aula 11
-* Códigos feitos no Keil para o 8051. [Acessar](/atividade_aula_15/atividade_aula_15_0104_leandro_schillreff.pdf)
+## Atividade aula 15
+* Códigos feitos no Keil para o 8051, imprimir caracteres na porta serial. [Acessar](/atividade_aula_15/atividade_aula_15_0104_leandro_schillreff.pdf)
